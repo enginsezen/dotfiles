@@ -34,6 +34,7 @@ MONITORING_PACKAGES=(
 
 UTILITY_PACKAGES=(
   curl
+  fontconfig
   git
   unzip
   wget
