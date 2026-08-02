@@ -16,7 +16,10 @@ CLI_PACKAGES=(
   bat
   eza
   fd-find
+  fzf
   ripgrep
+  shellcheck
+  shfmt
   tree
   zoxide
 )

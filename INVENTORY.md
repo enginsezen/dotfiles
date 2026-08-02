@@ -18,7 +18,6 @@
 - [x] fd
 - [x] tree
 - [x] btop
-- [x] fastfetch
 
 ## Editor
 
