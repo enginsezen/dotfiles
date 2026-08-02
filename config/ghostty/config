@@ -1,0 +1,20 @@
+theme = TokyoNight
+
+font-family = Maple Mono NF
+font-size = 14
+font-feature = liga
+
+window-width = 100
+window-height = 30
+
+window-padding-x = 10
+window-padding-y = 10
+
+confirm-close-surface = false
+
+copy-on-select = true
+
+cursor-style = bar
+cursor-style-blink = false
+
+keybind = ctrl+enter=unbind
