@@ -1,0 +1,31 @@
+# Normalize text files to LF
+* text=auto eol=lf
+
+# Shell
+*.sh text
+*.bash text
+*.zsh text
+
+# Config files
+*.lua text
+*.toml text
+*.yml text
+*.yaml text
+*.json text
+*.md text
+*.conf text
+*.ini text
+
+# Binary files
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.ttf binary
+*.otf binary
+*.woff binary
+*.woff2 binary
+*.zip binary
+*.tar binary
+*.gz binary
