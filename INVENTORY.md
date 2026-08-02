@@ -1,36 +1,85 @@
 # Development Environment Inventory
 
+## Operating System
+
+- Ubuntu 26.04 LTS
+
+---
+
 ## Terminal
 
-- [x] Ghostty
+- Ghostty
+  - Theme: TokyoNight
+  - Font: Maple Mono NF
+  - Font Size: 14
+
+---
 
 ## Shell
 
-- [x] Zsh
-- [x] fzf
-- [x] zoxide
+- Zsh
+- Starship
+- fzf
+- zoxide
 
-## CLI
+---
 
-- [x] bat
-- [x] eza
-- [x] ripgrep
-- [x] fd
-- [x] tree
-- [x] btop
+## CLI Tools
+
+- bat
+- eza
+- fd
+- ripgrep
+- tree
+- btop
+- shellcheck
+- shfmt
+
+---
 
 ## Editor
 
-- [x] Neovim
-- [x] LazyVim
+- Neovim 0.11
+- LazyVim Starter
 
-## Container
+---
 
-- [x] Docker CE
-- [x] Docker Compose
-- [x] Buildx
-- [x] LazyDocker
+## Container Tools
+
+- Docker CE
+- Docker Compose
+- Docker Buildx
+- LazyDocker
+
+---
 
 ## Fonts
 
-- [x] Maple Mono NF
+- Maple Mono Nerd Font
+
+---
+
+## Managed Configuration
+
+- Ghostty
+- Git
+- Zsh
+- Starship
+- Neovim
+- btop
+- LazyDocker
+
+---
+
+## Project Commands
+
+```text
+make help
+make bootstrap
+make packages
+make update
+make fonts
+make format
+make lint
+make check
+```

@@ -1,20 +1,19 @@
 # Dotfiles
 
-A reproducible Ubuntu development environment focused on a clean terminal experience, modern CLI tools and version-controlled configuration.
+A reproducible Ubuntu development environment focused on a clean terminal experience, modern CLI tools, and version-controlled configuration.
 
 ---
 
 ## Features
 
-- Ghostty
-- Zsh
-- Starship
-- Neovim (LazyVim)
-- Git
-- btop
-- LazyDocker
-- Docker
-- Maple Mono Nerd Font
+- 🖥️ Ghostty
+- 🐚 Zsh
+- 🚀 Starship
+- ✏️ Neovim (LazyVim)
+- 📝 Git
+- 📊 btop
+- 🐳 LazyDocker
+- 🔤 Maple Mono Nerd Font
 
 ---
 
@@ -24,53 +23,97 @@ A reproducible Ubuntu development environment focused on a clean terminal experi
 .
 ├── home/
 │   ├── .config/
+│   │   ├── btop/
+│   │   ├── ghostty/
+│   │   ├── lazydocker/
+│   │   ├── nvim/
+│   │   └── starship.toml
 │   ├── .gitconfig
 │   └── .zshrc
 │
 ├── scripts/
+│   ├── lib/
+│   │   └── common.sh
 │   ├── bootstrap.sh
-│   └── packages.sh
+│   ├── fonts.sh
+│   ├── packages.sh
+│   └── update.sh
 │
 ├── CHANGELOG.md
 ├── INVENTORY.md
 ├── LICENSE
+├── Makefile
 └── README.md
 ```
 
 ---
 
-## Installation
+## Quick Start
 
 Clone the repository.
 
 ```bash
-git clone git@github.com:enginsezen/dotfiles.git
+git clone https://github.com/enginsezen/dotfiles.git
+
 cd dotfiles
 ```
 
 Install required packages.
 
 ```bash
-./scripts/packages.sh
+make packages
 ```
 
 Create symbolic links.
 
 ```bash
-./scripts/bootstrap.sh
+make bootstrap
+```
+
+Install Maple Mono Nerd Font.
+
+```bash
+make fonts
+```
+
+---
+
+## Available Commands
+
+| Command | Description |
+|----------|-------------|
+| `make help` | Show available commands |
+| `make bootstrap` | Create symbolic links |
+| `make packages` | Install required packages |
+| `make update` | Update the operating system |
+| `make fonts` | Install Maple Mono Nerd Font |
+| `make format` | Format all shell scripts |
+| `make lint` | Run ShellCheck |
+| `make check` | Run formatter and linter |
+
+---
+
+## Development Workflow
+
+Every change should follow the same workflow.
+
+```bash
+make format
+make lint
+make check
 ```
 
 ---
 
 ## Managed Configuration
 
-| Application | Managed |
-|------------|:-------:|
+| Application | Status |
+|--------------|:------:|
 | Ghostty | ✅ |
 | Zsh | ✅ |
 | Starship | ✅ |
 | Git | ✅ |
-| Neovim | ✅ |
+| Neovim (LazyVim) | ✅ |
 | btop | ✅ |
 | LazyDocker | ✅ |
 
@@ -82,6 +125,8 @@ Create symbolic links.
 - Keep installation reproducible.
 - Prefer simple, maintainable solutions.
 - Automate repetitive setup tasks.
+- Follow consistent coding standards.
+- Keep scripts idempotent.
 
 ---
 
