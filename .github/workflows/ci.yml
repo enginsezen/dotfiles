@@ -11,6 +11,7 @@ on:
 
 jobs:
   shell:
+    name: Shell Quality Checks
     runs-on: ubuntu-latest
 
     steps:
@@ -20,13 +21,7 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get update
+          sudo apt-get install -y shellcheck shfmt
 
-          sudo apt-get install -y \
-            shellcheck \
-            shfmt
-
-      - name: Check formatting
-        run: make format
-
-      - name: Run ShellCheck
-        run: make lint
+      - name: Run CI
+        run: make ci

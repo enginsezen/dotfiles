@@ -1,5 +1,8 @@
 # Dotfiles
 
+[![CI](https://github.com/enginsezen/dotfiles/actions/workflows/ci.yml/badge.svg)](https://github.com/enginsezen/dotfiles/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
 A reproducible Ubuntu development environment focused on a clean terminal experience, modern CLI tools, and version-controlled configuration.
 
 ---
