@@ -1,0 +1,25 @@
+[user]
+	email = github@enginsezen.com
+	name = Engin Sezen
+[init]
+	defaultBranch = main
+[core]
+	editor = nvim
+[fetch]
+	prune = true
+[push]
+	autoSetupRemote = true
+[rerere]
+	enabled = true
+[pull]
+	rebase = false
+[merge]
+    conflictStyle = zdiff3
+[diff]
+    colorMoved = zebra
+[column]
+    ui = auto
+[tag]
+    sort = version:refname
+[help]
+    autocorrect = prompt
