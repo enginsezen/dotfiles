@@ -6,7 +6,7 @@
 
 A reproducible Ubuntu development environment focused on a clean terminal experience, modern CLI tools, automated setup, and version-controlled configuration.
 
-## Preview
+## Workspace
 
 <p align="center">
   <img src="assets/images/terminal-workspace.png" width="100%">
