@@ -8,6 +8,14 @@ A reproducible Ubuntu development environment focused on a clean terminal experi
 
 ---
 
+## Preview
+
+<p align="center">
+  <img src="assets/images/terminal-workspace.png" width="100%">
+</p>
+
+---
+
 ## Features
 
 - 🖥️ Ghostty
