@@ -6,15 +6,11 @@
 
 A reproducible Ubuntu development environment focused on a clean terminal experience, modern CLI tools, automated setup, and version-controlled configuration.
 
----
-
 ## Preview
 
 <p align="center">
   <img src="assets/images/terminal-workspace.png" width="100%">
 </p>
-
----
 
 ## Features
 
@@ -27,8 +23,6 @@ A reproducible Ubuntu development environment focused on a clean terminal experi
 - 🐳 LazyDocker
 - 🔤 Maple Mono Nerd Font
 - ⚙️ GitHub Actions CI
-
----
 
 ## Repository Structure
 
@@ -68,8 +62,6 @@ A reproducible Ubuntu development environment focused on a clean terminal experi
 └── README.md
 ```
 
----
-
 ## Quick Start
 
 Clone the repository.
@@ -98,8 +90,6 @@ Install Maple Mono Nerd Font.
 make fonts
 ```
 
----
-
 ## Available Commands
 
 | Command | Description |
@@ -115,8 +105,6 @@ make fonts
 | `make check` | Format and lint scripts |
 | `make ci` | Run the same checks as GitHub Actions |
 
----
-
 ## Development Workflow
 
 Before committing changes, run:
@@ -130,8 +118,6 @@ make ci
 
 The GitHub Actions workflow runs the same validation automatically on every push.
 
----
-
 ## Managed Configuration
 
 | Application | Status |
@@ -144,8 +130,6 @@ The GitHub Actions workflow runs the same validation automatically on every push
 | btop | ✅ |
 | LazyDocker | ✅ |
 
----
-
 ## Philosophy
 
 - Keep configuration under version control.
@@ -155,8 +139,6 @@ The GitHub Actions workflow runs the same validation automatically on every push
 - Follow consistent coding standards.
 - Keep scripts idempotent.
 - Validate every change through Continuous Integration.
-
----
 
 ## License
 
