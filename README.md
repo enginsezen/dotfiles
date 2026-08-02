@@ -2,8 +2,9 @@
 
 [![CI](https://github.com/enginsezen/dotfiles/actions/workflows/ci.yml/badge.svg)](https://github.com/enginsezen/dotfiles/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Release](https://img.shields.io/github/v/release/enginsezen/dotfiles)](https://github.com/enginsezen/dotfiles/releases)
 
-A reproducible Ubuntu development environment focused on a clean terminal experience, modern CLI tools, and version-controlled configuration.
+A reproducible Ubuntu development environment focused on a clean terminal experience, modern CLI tools, automated setup, and version-controlled configuration.
 
 ---
 
@@ -17,6 +18,7 @@ A reproducible Ubuntu development environment focused on a clean terminal experi
 - 📊 btop
 - 🐳 LazyDocker
 - 🔤 Maple Mono Nerd Font
+- ⚙️ GitHub Actions CI
 
 ---
 
@@ -24,13 +26,22 @@ A reproducible Ubuntu development environment focused on a clean terminal experi
 
 ```text
 .
+├── .github/
+│   └── workflows/
+│       └── ci.yml
+│
 ├── home/
 │   ├── .config/
 │   │   ├── btop/
 │   │   ├── ghostty/
 │   │   ├── lazydocker/
 │   │   ├── nvim/
-│   │   └── starship.toml
+│   │   ├── starship.toml
+│   │   └── zsh/
+│   │       ├── aliases.zsh
+│   │       ├── exports.zsh
+│   │       └── functions.zsh
+│   │
 │   ├── .gitconfig
 │   └── .zshrc
 │
@@ -91,20 +102,25 @@ make fonts
 | `make update` | Update the operating system |
 | `make fonts` | Install Maple Mono Nerd Font |
 | `make format` | Format all shell scripts |
+| `make format-check` | Verify formatting without modifying files |
 | `make lint` | Run ShellCheck |
-| `make check` | Run formatter and linter |
+| `make check` | Format and lint scripts |
+| `make ci` | Run the same checks as GitHub Actions |
 
 ---
 
 ## Development Workflow
 
-Every change should follow the same workflow.
+Before committing changes, run:
 
 ```bash
 make format
 make lint
 make check
+make ci
 ```
+
+The GitHub Actions workflow runs the same validation automatically on every push.
 
 ---
 
@@ -130,6 +146,7 @@ make check
 - Automate repetitive setup tasks.
 - Follow consistent coding standards.
 - Keep scripts idempotent.
+- Validate every change through Continuous Integration.
 
 ---
 
