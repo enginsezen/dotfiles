@@ -1,0 +1,104 @@
+# ==========================================================
+# Starship Configuration
+# Minimal • Fast • Developer
+# ==========================================================
+
+add_newline = true
+
+format = """
+$directory\
+$git_branch\
+$git_status\
+$docker_context\
+$fill\
+$cmd_duration\
+$line_break\
+$character
+"""
+
+# ----------------------------------------------------------
+# Prompt
+# ----------------------------------------------------------
+
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
+vimcmd_symbol = "[❮](bold yellow)"
+
+# ----------------------------------------------------------
+# Directory
+# ----------------------------------------------------------
+
+[directory]
+style = "bold cyan"
+truncation_length = 3
+truncate_to_repo = false
+read_only = " "
+
+# ----------------------------------------------------------
+# Git
+# ----------------------------------------------------------
+
+[git_branch]
+symbol = " "
+style = "bold purple"
+
+[git_status]
+style = "bold red"
+
+# ----------------------------------------------------------
+# Docker
+# ----------------------------------------------------------
+
+[docker_context]
+symbol = "🐳 "
+style = "blue"
+
+# ----------------------------------------------------------
+# Command duration
+# ----------------------------------------------------------
+
+[cmd_duration]
+min_time = 1500
+format = "[⏱ $duration](yellow)"
+
+# ----------------------------------------------------------
+# Fill
+# ----------------------------------------------------------
+
+[fill]
+symbol = " "
+
+# ----------------------------------------------------------
+# Disable modules we don't need
+# ----------------------------------------------------------
+
+[aws]
+disabled = true
+
+[gcloud]
+disabled = true
+
+[azure]
+disabled = true
+
+[kubernetes]
+disabled = true
+
+[terraform]
+disabled = true
+
+[package]
+disabled = true
+
+[memory_usage]
+disabled = true
+
+[hostname]
+disabled = true
+
+[username]
+disabled = true
+
+[time]
+disabled = true
