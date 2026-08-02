@@ -65,6 +65,10 @@ link_file \
   "$CONFIG/.config/nvim" \
   "$HOME/.config/nvim"
 
+link_file \
+  "$CONFIG/.config/zsh" \
+  "$HOME/.config/zsh"
+
 echo
 
 success "Bootstrap completed."
