@@ -2,6 +2,9 @@
 
 set -euo pipefail
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+source "$SCRIPT_DIR/lib/common.sh"
+
 SHELL_PACKAGES=(
   zsh
   fzf
@@ -33,30 +36,37 @@ UTILITY_PACKAGES=(
 )
 
 update_system() {
-  echo "==> Updating package lists..."
+  info "Updating package lists..."
+  require_sudo
   sudo apt update
 }
 
 install_packages() {
-  echo "==> Installing packages..."
+  info "Installing packages..."
 
   sudo apt install -y \
-    "${SHELL_PACKAGES[@]}" \
-    "${CLI_PACKAGES[@]}" \
-    "${EDITOR_PACKAGES[@]}" \
-    "${MONITORING_PACKAGES[@]}" \
-    "${UTILITY_PACKAGES[@]}"
+      "${SHELL_PACKAGES[@]}" \
+      "${CLI_PACKAGES[@]}" \
+      "${EDITOR_PACKAGES[@]}" \
+      "${MONITORING_PACKAGES[@]}" \
+      "${UTILITY_PACKAGES[@]}"
+
+  success "Packages installed"
 }
 
 cleanup() {
-  echo "==> Cleaning up..."
+  info "Cleaning up..."
   sudo apt autoremove -y
+  success "Cleanup completed"
 }
 
 main() {
   update_system
   install_packages
   cleanup
+
+  echo
+  success "Package installation completed."
 }
 
 main
