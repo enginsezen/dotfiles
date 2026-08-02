@@ -6,10 +6,10 @@
 
 A reproducible Ubuntu development environment focused on a clean terminal experience, modern CLI tools, automated setup, and version-controlled configuration.
 
-## Workspace
+## Preview
 
 <p align="center">
-  <img src="assets/images/terminal-workspace.png" width="100%">
+  <img src="assets/images/terminal-workspace.png" alt="Terminal workspace" width="100%">
 </p>
 
 ## Features
@@ -44,7 +44,7 @@ A reproducible Ubuntu development environment focused on a clean terminal experi
 │   │       ├── exports.zsh
 │   │       └── functions.zsh
 │   │
-│   ├── .gitconfig
+│   ├── .gitconfig.example
 │   └── .zshrc
 │
 ├── scripts/
@@ -68,7 +68,6 @@ Clone the repository.
 
 ```bash
 git clone https://github.com/enginsezen/dotfiles.git
-
 cd dotfiles
 ```
 
@@ -77,6 +76,21 @@ Install required packages.
 ```bash
 make packages
 ```
+
+Configure Git.
+
+Copy the example configuration.
+
+```bash
+cp home/.gitconfig.example home/.gitconfig
+```
+
+Edit `home/.gitconfig` and replace:
+
+- `Your Name`
+- `your@email.com`
+
+with your own Git identity.
 
 Create symbolic links.
 
@@ -89,6 +103,9 @@ Install Maple Mono Nerd Font.
 ```bash
 make fonts
 ```
+
+> [!NOTE]
+> This repository provides a `.gitconfig.example` template. Configure it with your own Git identity before running `make bootstrap`.
 
 ## Available Commands
 
@@ -116,16 +133,15 @@ make check
 make ci
 ```
 
-The GitHub Actions workflow runs the same validation automatically on every push.
+The GitHub Actions workflow performs the same validation automatically on every push.
 
-## Managed Configuration
+## Managed Applications
 
 | Application | Status |
 |--------------|:------:|
 | Ghostty | ✅ |
 | Zsh | ✅ |
 | Starship | ✅ |
-| Git | ✅ |
 | Neovim (LazyVim) | ✅ |
 | btop | ✅ |
 | LazyDocker | ✅ |

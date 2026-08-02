@@ -42,3 +42,9 @@ tmp/
 
 __pycache__/
 *.py[cod]
+
+# =====================================
+# Personal configuration
+# =====================================
+
+home/.gitconfig
