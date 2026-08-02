@@ -3,6 +3,8 @@
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# shellcheck source=scripts/lib/common.sh
 source "$SCRIPT_DIR/lib/common.sh"
 
 SHELL_PACKAGES=(
@@ -45,11 +47,11 @@ install_packages() {
   info "Installing packages..."
 
   sudo apt install -y \
-      "${SHELL_PACKAGES[@]}" \
-      "${CLI_PACKAGES[@]}" \
-      "${EDITOR_PACKAGES[@]}" \
-      "${MONITORING_PACKAGES[@]}" \
-      "${UTILITY_PACKAGES[@]}"
+    "${SHELL_PACKAGES[@]}" \
+    "${CLI_PACKAGES[@]}" \
+    "${EDITOR_PACKAGES[@]}" \
+    "${MONITORING_PACKAGES[@]}" \
+    "${UTILITY_PACKAGES[@]}"
 
   success "Packages installed"
 }

@@ -2,32 +2,37 @@
 
 set -euo pipefail
 
-GREEN="\033[32m"
-BLUE="\033[34m"
-YELLOW="\033[33m"
-RED="\033[31m"
-RESET="\033[0m"
+readonly GREEN="\033[32m"
+readonly BLUE="\033[34m"
+readonly YELLOW="\033[33m"
+readonly RED="\033[31m"
+readonly RESET="\033[0m"
 
 info() {
-    printf "${BLUE}==>${RESET} %s\n" "$1"
+  printf "${BLUE}==>${RESET} %s\n" "$1"
 }
 
 success() {
-    printf "${GREEN}✔${RESET} %s\n" "$1"
+  printf "${GREEN}✔${RESET} %s\n" "$1"
 }
 
 warn() {
-    printf "${YELLOW}!${RESET} %s\n" "$1"
+  printf "${YELLOW}!${RESET} %s\n" "$1"
 }
 
 error() {
-    printf "${RED}✘${RESET} %s\n" "$1"
+  printf "${RED}✘${RESET} %s\n" "$1"
 }
 
 command_exists() {
-    command -v "$1" >/dev/null 2>&1
+  command -v "$1" >/dev/null 2>&1
 }
 
 require_sudo() {
-    sudo -v
+  sudo -v
+}
+
+die() {
+  error "$1"
+  exit 1
 }

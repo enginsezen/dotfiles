@@ -4,10 +4,11 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
+# shellcheck source=scripts/lib/common.sh
 source "$SCRIPT_DIR/lib/common.sh"
 
-DOTFILES="$HOME/Projects/dotfiles"
-CONFIG="$DOTFILES/home"
+readonly DOTFILES="$HOME/Projects/dotfiles"
+readonly CONFIG="$DOTFILES/home"
 
 link_file() {
   local source="$1"
