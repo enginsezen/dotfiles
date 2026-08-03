@@ -6,15 +6,11 @@
 
 A reproducible Ubuntu development environment focused on a clean terminal experience, modern CLI tools, automated setup, and version-controlled configuration.
 
----
-
 ## Preview
 
 <p align="center">
   <img src="assets/images/terminal-workspace.png" alt="Terminal workspace" width="100%">
 </p>
-
----
 
 ## Features
 
@@ -27,8 +23,6 @@ A reproducible Ubuntu development environment focused on a clean terminal experi
 - 🐳 LazyDocker configuration
 - 🔤 Maple Mono Nerd Font
 - ⚙️ GitHub Actions CI
-
----
 
 ## Repository Structure
 
@@ -69,8 +63,6 @@ A reproducible Ubuntu development environment focused on a clean terminal experi
 └── README.md
 ```
 
----
-
 ## Quick Start
 
 Clone the repository.
@@ -80,7 +72,7 @@ git clone https://github.com/enginsezen/dotfiles.git
 cd dotfiles
 ```
 
-Install required packages.
+Install the required packages.
 
 ```bash
 make packages
@@ -99,13 +91,13 @@ Edit `home/.gitconfig` and replace:
 
 with your own Git identity.
 
-Create symbolic links.
+Create the symbolic links.
 
 ```bash
 make bootstrap
 ```
 
-Install Maple Mono Nerd Font.
+Install the Maple Mono Nerd Font.
 
 ```bash
 make fonts
@@ -113,8 +105,6 @@ make fonts
 
 > [!NOTE]
 > This repository provides a `.gitconfig.example` template. Configure it with your own Git identity before running `make bootstrap`.
-
----
 
 ## Installed vs Managed
 
@@ -131,8 +121,6 @@ Some applications are installed automatically through `make packages`, while oth
 | Ghostty | ❌ | ✅ |
 | LazyDocker | ❌ | ✅ |
 
----
-
 ## Available Commands
 
 | Command | Description |
@@ -148,8 +136,6 @@ Some applications are installed automatically through `make packages`, while oth
 | `make check` | Format and lint scripts |
 | `make ci` | Run the same validation as GitHub Actions |
 
----
-
 ## Development Workflow
 
 Before pushing changes, run:
@@ -158,24 +144,7 @@ Before pushing changes, run:
 make ci
 ```
 
-This performs the same validation as the GitHub Actions workflow.
-
----
-
-## Managed Applications
-
-The following application configurations are maintained by this repository.
-
-| Application | Status |
-|-------------|:------:|
-| Ghostty | ✅ |
-| Zsh | ✅ |
-| Starship | ✅ |
-| Neovim (LazyVim) | ✅ |
-| btop | ✅ |
-| LazyDocker | ✅ |
-
----
+This executes the same validation pipeline used by GitHub Actions.
 
 ## Philosophy
 
@@ -187,8 +156,6 @@ The following application configurations are maintained by this repository.
 - Follow consistent coding standards.
 - Keep scripts idempotent.
 - Validate every change through Continuous Integration.
-
----
 
 ## License
 
