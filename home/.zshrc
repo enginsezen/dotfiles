@@ -45,10 +45,6 @@ setopt AUTO_MENU
 setopt COMPLETE_IN_WORD
 setopt ALWAYS_TO_END
 
-# TAB / Shift+TAB
-bindkey '^I' menu-complete
-bindkey "$terminfo[kcbt]" reverse-menu-complete
-
 # ----------------------------------------------------------
 # Keybindings
 # ----------------------------------------------------------
@@ -80,6 +76,13 @@ fi
 
 [[ -f /usr/share/doc/fzf/examples/completion.zsh ]] \
   && source /usr/share/doc/fzf/examples/completion.zsh
+
+# ----------------------------------------------------------
+# Completion Keybindings
+# ----------------------------------------------------------
+# Keep the classic Zsh TAB completion experience.
+bindkey '^I' menu-complete
+bindkey "$terminfo[kcbt]" reverse-menu-complete
 
 # Syntax Highlighting
 # (sudo apt install zsh-syntax-highlighting)
