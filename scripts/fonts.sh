@@ -9,13 +9,14 @@ source "$SCRIPT_DIR/lib/common.sh"
 
 readonly FONT_NAME="Maple Mono NF"
 
-# Güncellemek istediğinde sadece bu iki satırı değiştir.
+# Update these values when a new release is available.
 readonly FONT_VERSION="v7.9"
 readonly FONT_PACKAGE="MapleMono-NF.zip"
 
 readonly DOWNLOAD_URL="https://github.com/subframe7536/maple-font/releases/download/${FONT_VERSION}/${FONT_PACKAGE}"
 
 readonly FONT_DIR="$HOME/.local/share/fonts"
+
 TMP_DIR="$(mktemp -d)"
 readonly TMP_DIR
 
@@ -32,6 +33,10 @@ check_dependencies() {
 }
 
 check_installed() {
+  if [[ ! -d "$FONT_DIR" ]]; then
+    return
+  fi
+
   if find "$FONT_DIR" -maxdepth 1 -type f -name "MapleMono-NF-*.ttf" | grep -q .; then
     success "$FONT_NAME is already installed."
     exit 0
