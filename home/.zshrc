@@ -33,7 +33,7 @@ setopt PUSHD_IGNORE_DUPS
 autoload -Uz compinit
 compinit
 
-# Better completion
+# Completion behavior
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
@@ -71,6 +71,15 @@ if command -v zoxide >/dev/null 2>&1; then
 fi
 
 # FZF
+#
+# Provides:
+# - Ctrl+R : History search
+# - Ctrl+T : File picker
+# - Alt+C  : Directory picker
+#
+# The completion script overrides the TAB key.
+# We restore the preferred TAB behavior below.
+
 [[ -f /usr/share/doc/fzf/examples/key-bindings.zsh ]] \
   && source /usr/share/doc/fzf/examples/key-bindings.zsh
 
@@ -78,16 +87,15 @@ fi
   && source /usr/share/doc/fzf/examples/completion.zsh
 
 # ----------------------------------------------------------
-# Completion Keybindings
+# TAB Completion
 # ----------------------------------------------------------
-# Keep the classic Zsh TAB completion experience.
+# Restore the preferred TAB completion behavior.
 bindkey '^I' menu-complete
 bindkey "$terminfo[kcbt]" reverse-menu-complete
 
 # Syntax Highlighting
-# (sudo apt install zsh-syntax-highlighting)
 if [[ -f /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
-    source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+  source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
 
 # ----------------------------------------------------------
