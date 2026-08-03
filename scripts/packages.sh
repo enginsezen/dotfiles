@@ -10,6 +10,7 @@ source "$SCRIPT_DIR/lib/common.sh"
 SHELL_PACKAGES=(
   zsh
   zsh-autosuggestions
+  zsh-syntax-highlighting
 )
 
 CLI_PACKAGES=(
