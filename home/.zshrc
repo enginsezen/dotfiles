@@ -61,14 +61,21 @@ bindkey '^[[F' end-of-line
 # ----------------------------------------------------------
 
 # Autosuggestions
-source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+if [[ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
+  source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
 
 # Zoxide
-eval "$(zoxide init zsh)"
+if command -v zoxide >/dev/null 2>&1; then
+  eval "$(zoxide init zsh)"
+fi
 
 # FZF
-source /usr/share/doc/fzf/examples/key-bindings.zsh
-source /usr/share/doc/fzf/examples/completion.zsh
+[[ -f /usr/share/doc/fzf/examples/key-bindings.zsh ]] \
+  && source /usr/share/doc/fzf/examples/key-bindings.zsh
+
+[[ -f /usr/share/doc/fzf/examples/completion.zsh ]] \
+  && source /usr/share/doc/fzf/examples/completion.zsh
 
 # Syntax Highlighting
 # (sudo apt install zsh-syntax-highlighting)
@@ -88,4 +95,6 @@ fi
 # Prompt
 # ----------------------------------------------------------
 
-eval "$(starship init zsh)"
+if command -v starship >/dev/null 2>&1; then
+  eval "$(starship init zsh)"
+fi
