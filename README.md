@@ -20,7 +20,6 @@ A reproducible Ubuntu development environment focused on a clean terminal experi
 - ✏️ Neovim (LazyVim)
 - 📝 Git
 - 📊 btop
-- 🐳 LazyDocker
 - 🔤 Maple Mono Nerd Font
 - ⚙️ GitHub Actions CI
 
@@ -36,7 +35,6 @@ A reproducible Ubuntu development environment focused on a clean terminal experi
 │   ├── .config/
 │   │   ├── btop/
 │   │   ├── ghostty/
-│   │   ├── lazydocker/
 │   │   ├── nvim/
 │   │   ├── starship.toml
 │   │   └── zsh/
@@ -144,7 +142,6 @@ The GitHub Actions workflow performs the same validation automatically on every 
 | Starship | ✅ |
 | Neovim (LazyVim) | ✅ |
 | btop | ✅ |
-| LazyDocker | ✅ |
 
 ## Philosophy
 

@@ -8,6 +8,41 @@ The format is based on Keep a Changelog.
 
 ## [Unreleased]
 
+### Changed
+
+- Ongoing improvements and fixes.
+
+---
+
+## [0.2.0] - 2026-08-03
+
+### Added
+
+- Automatic Starship installation
+- Automatic zsh-autosuggestions installation
+- Automatic zsh-syntax-highlighting installation
+- Automatic default shell configuration (zsh)
+
+### Changed
+
+- Improved bootstrap workflow
+- Improved package installation process
+- Improved Zsh configuration reliability
+- Improved shell completion behavior
+- Improved project documentation
+
+### Fixed
+
+- Missing Starship installation on fresh systems
+- Missing zsh-autosuggestions dependency
+- Errors caused by unavailable optional integrations
+- Default shell not being changed automatically
+- TAB completion conflict with fzf
+
+### Removed
+
+- Unused LazyDocker configuration
+
 ---
 
 ## [0.1.0] - 2026-08-02
@@ -22,6 +57,7 @@ The format is based on Keep a Changelog.
 - Makefile workflow
 - ShellCheck integration
 - shfmt integration
+- GitHub Actions CI
 
 ### Managed Configuration
 
@@ -31,7 +67,6 @@ The format is based on Keep a Changelog.
 - Git
 - Neovim (LazyVim)
 - btop
-- LazyDocker
 
 ### Development
 

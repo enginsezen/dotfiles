@@ -76,10 +76,6 @@ bootstrap() {
     "$HOME/.config/btop"
 
   link_file \
-    "$CONFIG/.config/lazydocker/config.yml" \
-    "$HOME/.config/lazydocker/config.yml"
-
-  link_file \
     "$CONFIG/.config/nvim" \
     "$HOME/.config/nvim"
 
