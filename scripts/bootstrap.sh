@@ -7,27 +7,31 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 # shellcheck source=scripts/lib/common.sh
 source "$SCRIPT_DIR/lib/common.sh"
 
-readonly DOTFILES="$HOME/Projects/dotfiles"
-readonly CONFIG="$DOTFILES/home"
+DOTFILES="$(cd "$SCRIPT_DIR/.." && pwd)"
+readonly DOTFILES
+
+CONFIG="$DOTFILES/home"
+readonly CONFIG
 
 link_file() {
   local source="$1"
   local target="$2"
+  local name="${3:-$(basename "$target")}"
 
   mkdir -p "$(dirname "$target")"
 
   if [[ -L "$target" ]] && [[ "$(readlink "$target")" == "$source" ]]; then
-    success "$(basename "$target") already linked"
+    success "$name already linked"
     return
   fi
 
   if [[ -e "$target" ]] && [[ ! -L "$target" ]]; then
     mv "$target" "$target.backup"
-    warn "Backed up $(basename "$target")"
+    warn "Backed up $name"
   fi
 
   ln -sfn "$source" "$target"
-  success "Linked $(basename "$target")"
+  success "Linked $name"
 }
 
 set_default_shell() {
@@ -57,35 +61,43 @@ bootstrap() {
 
   link_file \
     "$CONFIG/.zshrc" \
-    "$HOME/.zshrc"
+    "$HOME/.zshrc" \
+    "Zsh"
 
   link_file \
     "$CONFIG/.gitconfig" \
-    "$HOME/.gitconfig"
+    "$HOME/.gitconfig" \
+    "Git"
 
   link_file \
     "$CONFIG/.config/starship.toml" \
-    "$HOME/.config/starship.toml"
+    "$HOME/.config/starship.toml" \
+    "Starship"
 
   link_file \
     "$CONFIG/.config/ghostty/config" \
-    "$HOME/.config/ghostty/config"
+    "$HOME/.config/ghostty/config" \
+    "Ghostty"
 
   link_file \
     "$CONFIG/.config/btop" \
-    "$HOME/.config/btop"
+    "$HOME/.config/btop" \
+    "btop"
 
   link_file \
     "$CONFIG/.config/lazydocker/config.yml" \
-    "$HOME/.config/lazydocker/config.yml"
+    "$HOME/.config/lazydocker/config.yml" \
+    "LazyDocker"
 
   link_file \
     "$CONFIG/.config/nvim" \
-    "$HOME/.config/nvim"
+    "$HOME/.config/nvim" \
+    "Neovim"
 
   link_file \
     "$CONFIG/.config/zsh" \
-    "$HOME/.config/zsh"
+    "$HOME/.config/zsh" \
+    "Zsh config"
 
   echo
 }
