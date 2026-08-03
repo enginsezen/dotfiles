@@ -9,7 +9,7 @@ source "$SCRIPT_DIR/lib/common.sh"
 
 SHELL_PACKAGES=(
   zsh
-  fzf
+  zsh-autosuggestions
 )
 
 CLI_PACKAGES=(
