@@ -22,6 +22,8 @@ The format is based on Keep a Changelog.
 - Automatic zsh-autosuggestions installation
 - Automatic zsh-syntax-highlighting installation
 - Automatic default shell configuration (zsh)
+- Git configuration template (`.gitconfig.example`)
+- Managed LazyDocker configuration
 
 ### Changed
 
@@ -30,6 +32,7 @@ The format is based on Keep a Changelog.
 - Improved Zsh configuration reliability
 - Improved shell completion behavior
 - Improved project documentation
+- Improved installation workflow
 
 ### Fixed
 
@@ -37,11 +40,8 @@ The format is based on Keep a Changelog.
 - Missing zsh-autosuggestions dependency
 - Errors caused by unavailable optional integrations
 - Default shell not being changed automatically
-- TAB completion conflict with fzf
-
-### Removed
-
-- Unused LazyDocker configuration
+- Restored preferred Zsh TAB completion after FZF initialization
+- Improved bootstrap idempotency
 
 ---
 

@@ -4,6 +4,7 @@
 
 - Ubuntu 26.04 LTS
 
+---
 
 ## Terminal
 
@@ -12,6 +13,7 @@
   - Font: Maple Mono NF
   - Font Size: 14
 
+---
 
 ## Shell
 
@@ -22,6 +24,7 @@
 - zsh-autosuggestions
 - zsh-syntax-highlighting
 
+---
 
 ## CLI Tools
 
@@ -34,12 +37,14 @@
 - shellcheck
 - shfmt
 
+---
 
 ## Editor
 
 - Neovim 0.11
 - LazyVim Starter
 
+---
 
 ## Container Tools
 
@@ -47,11 +52,13 @@
 - Docker Compose
 - Docker Buildx
 
+---
 
 ## Fonts
 
 - Maple Mono Nerd Font
 
+---
 
 ## Managed Configuration
 
@@ -59,9 +66,11 @@
 - Git
 - Zsh
 - Starship
-- Neovim
+- Neovim (LazyVim)
 - btop
+- LazyDocker
 
+---
 
 ## Project Commands
 
@@ -72,6 +81,7 @@ make packages
 make update
 make fonts
 make format
+make format-check
 make lint
 make check
 make ci

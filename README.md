@@ -6,11 +6,15 @@
 
 A reproducible Ubuntu development environment focused on a clean terminal experience, modern CLI tools, automated setup, and version-controlled configuration.
 
+---
+
 ## Preview
 
 <p align="center">
   <img src="assets/images/terminal-workspace.png" alt="Terminal workspace" width="100%">
 </p>
+
+---
 
 ## Features
 
@@ -20,8 +24,11 @@ A reproducible Ubuntu development environment focused on a clean terminal experi
 - ✏️ Neovim (LazyVim)
 - 📝 Git
 - 📊 btop
+- 🐳 LazyDocker configuration
 - 🔤 Maple Mono Nerd Font
 - ⚙️ GitHub Actions CI
+
+---
 
 ## Repository Structure
 
@@ -35,6 +42,8 @@ A reproducible Ubuntu development environment focused on a clean terminal experi
 │   ├── .config/
 │   │   ├── btop/
 │   │   ├── ghostty/
+│   │   ├── lazydocker/
+│   │   │   └── config.yml
 │   │   ├── nvim/
 │   │   ├── starship.toml
 │   │   └── zsh/
@@ -60,6 +69,8 @@ A reproducible Ubuntu development environment focused on a clean terminal experi
 └── README.md
 ```
 
+---
+
 ## Quick Start
 
 Clone the repository.
@@ -76,8 +87,6 @@ make packages
 ```
 
 Configure Git.
-
-Copy the example configuration.
 
 ```bash
 cp home/.gitconfig.example home/.gitconfig
@@ -105,10 +114,29 @@ make fonts
 > [!NOTE]
 > This repository provides a `.gitconfig.example` template. Configure it with your own Git identity before running `make bootstrap`.
 
+---
+
+## Installed vs Managed
+
+This repository distinguishes between **installing applications** and **managing their configuration**.
+
+Some applications are installed automatically through `make packages`, while others are only configured if they are already installed on the system.
+
+| Application | Installed | Configuration |
+|-------------|:---------:|:-------------:|
+| Zsh | ✅ | ✅ |
+| Starship | ✅ | ✅ |
+| Neovim | ✅ | ✅ |
+| btop | ✅ | ✅ |
+| Ghostty | ❌ | ✅ |
+| LazyDocker | ❌ | ✅ |
+
+---
+
 ## Available Commands
 
 | Command | Description |
-|----------|-------------|
+|---------|-------------|
 | `make help` | Show available commands |
 | `make bootstrap` | Create symbolic links |
 | `make packages` | Install required packages |
@@ -118,40 +146,49 @@ make fonts
 | `make format-check` | Verify formatting without modifying files |
 | `make lint` | Run ShellCheck |
 | `make check` | Format and lint scripts |
-| `make ci` | Run the same checks as GitHub Actions |
+| `make ci` | Run the same validation as GitHub Actions |
+
+---
 
 ## Development Workflow
 
-Before committing changes, run:
+Before pushing changes, run:
 
 ```bash
-make format
-make lint
-make check
 make ci
 ```
 
-The GitHub Actions workflow performs the same validation automatically on every push.
+This performs the same validation as the GitHub Actions workflow.
+
+---
 
 ## Managed Applications
 
+The following application configurations are maintained by this repository.
+
 | Application | Status |
-|--------------|:------:|
+|-------------|:------:|
 | Ghostty | ✅ |
 | Zsh | ✅ |
 | Starship | ✅ |
 | Neovim (LazyVim) | ✅ |
 | btop | ✅ |
+| LazyDocker | ✅ |
+
+---
 
 ## Philosophy
 
 - Keep configuration under version control.
 - Keep installation reproducible.
+- Separate application installation from configuration management.
 - Prefer simple, maintainable solutions.
 - Automate repetitive setup tasks.
 - Follow consistent coding standards.
 - Keep scripts idempotent.
 - Validate every change through Continuous Integration.
+
+---
 
 ## License
 
