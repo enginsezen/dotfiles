@@ -60,6 +60,19 @@ install_packages() {
   success "Packages installed"
 }
 
+install_starship() {
+  if command_exists starship; then
+    success "Starship already installed."
+    return
+  fi
+
+  info "Installing Starship..."
+
+  curl -fsSL https://starship.rs/install.sh | sh -s -- -y
+
+  success "Starship installed."
+}
+
 cleanup() {
   info "Cleaning up..."
   sudo apt autoremove -y
@@ -69,6 +82,7 @@ cleanup() {
 main() {
   update_system
   install_packages
+  install_starship
   cleanup
 
   echo
