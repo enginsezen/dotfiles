@@ -30,45 +30,71 @@ link_file() {
   success "Linked $(basename "$target")"
 }
 
-info "Starting bootstrap..."
+set_default_shell() {
+  local zsh_path
 
-mkdir -p "$HOME/.config"
-mkdir -p "$HOME/.local/bin"
+  zsh_path="$(command -v zsh)"
 
-echo
+  if [[ "$SHELL" == "$zsh_path" ]]; then
+    success "Default shell already set to zsh."
+    return
+  fi
 
-link_file \
-  "$CONFIG/.zshrc" \
-  "$HOME/.zshrc"
+  info "Setting default shell to zsh..."
 
-link_file \
-  "$CONFIG/.gitconfig" \
-  "$HOME/.gitconfig"
+  chsh -s "$zsh_path"
 
-link_file \
-  "$CONFIG/.config/starship.toml" \
-  "$HOME/.config/starship.toml"
+  success "Default shell updated."
+}
 
-link_file \
-  "$CONFIG/.config/ghostty/config" \
-  "$HOME/.config/ghostty/config"
+bootstrap() {
+  info "Starting bootstrap..."
 
-link_file \
-  "$CONFIG/.config/btop" \
-  "$HOME/.config/btop"
+  mkdir -p "$HOME/.config"
+  mkdir -p "$HOME/.local/bin"
 
-link_file \
-  "$CONFIG/.config/lazydocker/config.yml" \
-  "$HOME/.config/lazydocker/config.yml"
+  echo
 
-link_file \
-  "$CONFIG/.config/nvim" \
-  "$HOME/.config/nvim"
+  link_file \
+    "$CONFIG/.zshrc" \
+    "$HOME/.zshrc"
 
-link_file \
-  "$CONFIG/.config/zsh" \
-  "$HOME/.config/zsh"
+  link_file \
+    "$CONFIG/.gitconfig" \
+    "$HOME/.gitconfig"
 
-echo
+  link_file \
+    "$CONFIG/.config/starship.toml" \
+    "$HOME/.config/starship.toml"
 
-success "Bootstrap completed."
+  link_file \
+    "$CONFIG/.config/ghostty/config" \
+    "$HOME/.config/ghostty/config"
+
+  link_file \
+    "$CONFIG/.config/btop" \
+    "$HOME/.config/btop"
+
+  link_file \
+    "$CONFIG/.config/lazydocker/config.yml" \
+    "$HOME/.config/lazydocker/config.yml"
+
+  link_file \
+    "$CONFIG/.config/nvim" \
+    "$HOME/.config/nvim"
+
+  link_file \
+    "$CONFIG/.config/zsh" \
+    "$HOME/.config/zsh"
+
+  echo
+}
+
+main() {
+  bootstrap
+  set_default_shell
+
+  success "Bootstrap completed."
+}
+
+main
