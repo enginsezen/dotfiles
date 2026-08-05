@@ -4,15 +4,19 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a Changelog.
 
----
-
 ## [Unreleased]
+
+### Added
+
+- Markdown-specific Neovim configuration.
 
 ### Changed
 
 - Ongoing improvements and fixes.
 
----
+### Fixed
+
+- Disabled Markdown conceal for improved fenced code block editing.
 
 ## [0.2.0] - 2026-08-03
 
@@ -42,8 +46,6 @@ The format is based on Keep a Changelog.
 - Default shell not being changed automatically
 - Restored preferred Zsh TAB completion after FZF initialization
 - Improved bootstrap idempotency
-
----
 
 ## [0.1.0] - 2026-08-02
 
