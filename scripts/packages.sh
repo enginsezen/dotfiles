@@ -34,6 +34,7 @@ MONITORING_PACKAGES=(
 )
 
 UTILITY_PACKAGES=(
+  build-essential
   curl
   fontconfig
   git
